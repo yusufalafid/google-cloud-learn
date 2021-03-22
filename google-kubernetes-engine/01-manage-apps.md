@@ -61,4 +61,13 @@ docker tag lac-app-image gcr.io/playground-s-11-94c871ea/lac-app-image:v1
 docker push gcr.io/playground-s-11-94c871ea/lac-app-image:v1
 ```
 
-    
+06. Create deployment
+```
+kubectl create deployment lac-app --image=gcr.io/playground-s-11-94c871ea/lac-app-image:v1
+```
+
+07. Expose deployment 
+
+```
+$ kubectl expose deployment lac-app --type LoadBalancer --port 80 --target-port 80
+```
